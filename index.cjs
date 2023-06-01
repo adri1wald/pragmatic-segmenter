@@ -2,9 +2,7 @@ const { platform, arch } = process;
 
 let nativeBinding = undefined;
 
-if (platform === "win32" && arch === "x64") {
-  nativeBinding = require("./dist/pragmatic-segmenter-bindings.win32-x64-msvc.node");
-} else if (platform === "linux") {
+if (platform === "linux") {
   if (arch === "x64") {
     nativeBinding = require("./dist/pragmatic-segmenter-bindings.linux-x64-gnu.node");
   } else if (arch === "arm64") {
